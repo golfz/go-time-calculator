@@ -3,11 +3,11 @@ package cmd
 import (
 	"bufio"
 	"fmt"
+	"github.com/golfz/time-calculator/timeutils"
 	"github.com/spf13/cobra"
 	"os"
 	"path/filepath"
 	"strings"
-	"time-calculator/timeutils"
 )
 
 var sumCmd = &cobra.Command{

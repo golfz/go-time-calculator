@@ -1,4 +1,4 @@
-module time-calculator
+module github.com/golfz/time-calculator
 
 go 1.18
 

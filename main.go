@@ -1,6 +1,6 @@
 package main
 
-import "time-calculator/cmd"
+import "github.com/golfz/time-calculator/cmd"
 
 func main() {
 	cmd.Execute()
