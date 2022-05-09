@@ -16,11 +16,29 @@ func main() {
 	fmt.Println("Hello, world.")
 }
 
-//func AddTime(a string, b string) string {
-//	var h1, h2, m1, m2, s1, s2 int
-//
-//	return t1 + t2
-//}
+func AddTime(a string, b string) string {
+	t1 := ExtractTime(a)
+	t2 := ExtractTime(b)
+
+	sum := MyTime{
+		Hour:   t1.Hour + t2.Hour,
+		Minute: t1.Minute + t2.Minute,
+		Second: t1.Second + t2.Second,
+	}
+
+	if sum.Second > 59 {
+		sum.Second -= 60
+		sum.Minute += 1
+	}
+	if sum.Minute > 59 {
+		sum.Minute -= 60
+		sum.Hour += 1
+	}
+
+	s := fmt.Sprintf("%02d:%02d:%02d", sum.Hour, sum.Minute, sum.Second)
+
+	return s
+}
 
 func ExtractTime(s string) MyTime {
 	s = strings.TrimSpace(s)
