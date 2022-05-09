@@ -21,7 +21,7 @@ result:
 
 #### With -f flag, sum from a file
 
-Example file: time.txt
+Example file: ([time.txt](./time.txt))
 ```text
 13:57
 18:00
