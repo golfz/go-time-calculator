@@ -119,3 +119,42 @@ func TestAddTime(t *testing.T) {
 		})
 	}
 }
+
+func TestAddAllTime(t *testing.T) {
+	type args struct {
+		s []string
+	}
+	tests := []struct {
+		name string
+		args args
+		want string
+	}{
+		{
+			name: "no input, expect 00:00:00",
+			args: args{s: []string{}},
+			want: "00:00:00",
+		},
+		{
+			name: "1 input, expect 01:02:03",
+			args: args{s: []string{"01:02:03"}},
+			want: "01:02:03",
+		},
+		{
+			name: "2 input, expect 02:03:04",
+			args: args{s: []string{"01:02:03", "01:01:01"}},
+			want: "02:03:04",
+		},
+		{
+			name: "3 input with overflow, expect 12:12:12",
+			args: args{s: []string{"01:40:30", "01:40:50", "08:50:52"}},
+			want: "12:12:12",
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := AddAllTime(tt.args.s); got != tt.want {
+				t.Errorf("AddAllTime() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}

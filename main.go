@@ -16,6 +16,16 @@ func main() {
 	fmt.Println("Hello, world.")
 }
 
+func AddAllTime(s []string) string {
+	sum := "00:00:00"
+
+	for _, v := range s {
+		sum = AddTime(sum, v)
+	}
+
+	return sum
+}
+
 func AddTime(a string, b string) string {
 	t1 := ExtractTime(a)
 	t2 := ExtractTime(b)
