@@ -28,11 +28,11 @@ func AddTime(a string, b string) string {
 
 	if sum.Second > 59 {
 		sum.Second -= 60
-		sum.Minute += 1
+		sum.Minute++
 	}
 	if sum.Minute > 59 {
 		sum.Minute -= 60
-		sum.Hour += 1
+		sum.Hour++
 	}
 
 	s := fmt.Sprintf("%02d:%02d:%02d", sum.Hour, sum.Minute, sum.Second)
