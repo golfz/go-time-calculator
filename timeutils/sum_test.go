@@ -2,7 +2,7 @@ package timeutils
 
 import "testing"
 
-func TestAddTime(t *testing.T) {
+func TestSum(t *testing.T) {
 	type args struct {
 		a string
 		b string
@@ -55,14 +55,14 @@ func TestAddTime(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := AddTime(tt.args.a, tt.args.b); got != tt.want {
-				t.Errorf("AddTime() = %v, want %v", got, tt.want)
+			if got := Sum(tt.args.a, tt.args.b); got != tt.want {
+				t.Errorf("Sum() = %v, want %v", got, tt.want)
 			}
 		})
 	}
 }
 
-func TestAddAllTime(t *testing.T) {
+func TestSumTimeList(t *testing.T) {
 	type args struct {
 		s []string
 	}
@@ -94,8 +94,8 @@ func TestAddAllTime(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := AddAllTime(tt.args.s); got != tt.want {
-				t.Errorf("AddAllTime() = %v, want %v", got, tt.want)
+			if got := SumTimeList(tt.args.s); got != tt.want {
+				t.Errorf("SumTimeList() = %v, want %v", got, tt.want)
 			}
 		})
 	}

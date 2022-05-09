@@ -9,8 +9,8 @@ import (
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "time-calculator",
-	Short: "time-calculator",
-	Long:  `time-calculator`,
+	Short: "time-calculator short description",
+	Long:  `time-calculator long description`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	// Run: func(cmd *cobra.Command, args []string) { },

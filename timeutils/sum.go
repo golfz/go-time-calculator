@@ -2,17 +2,17 @@ package timeutils
 
 import "fmt"
 
-func AddAllTime(s []string) string {
+func SumTimeList(s []string) string {
 	sum := "00:00:00"
 
 	for _, v := range s {
-		sum = AddTime(sum, v)
+		sum = Sum(sum, v)
 	}
 
 	return sum
 }
 
-func AddTime(a string, b string) string {
+func Sum(a string, b string) string {
 	t1 := ExtractTime(a)
 	t2 := ExtractTime(b)
 
