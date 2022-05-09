@@ -1,6 +1,6 @@
 package main
 
-import "go-time-calculator/cmd"
+import "time-calculator/cmd"
 
 func main() {
 	cmd.Execute()
